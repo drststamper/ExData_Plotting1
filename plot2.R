@@ -13,7 +13,7 @@ filtered_data <- sqldf(statement)
 datetime <- paste(filtered_data$Date,filtered_data$Time)
 filtered_data$DateTime <- strptime(datetime, "%d/%m/%Y %H:%M:%S")
 
-#open screen device (png)
+#open graphics device (png)
 png("plot2.png", width = 480, height = 480)
 
 #This line was taken from a forumpost of the course; it makes sure that the weekdays are
@@ -24,7 +24,7 @@ Sys.setlocale("LC_TIME","English_United States.1252")
 plot(filtered_data$DateTime, filtered_data$Global_active_power, type = "l", xlab = "", 
      ylab = "Global Active Power (kilowatts)")
 
-#close screen device(png)
+#close graphics device(png)
 dev.off()
 
 }

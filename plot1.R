@@ -13,13 +13,13 @@ filtered_data <- sqldf(statement)
 datetime <- paste(filtered_data$Date,filtered_data$Time)
 filtered_data$DateTime <- strptime(datetime, "%d/%m/%Y %H:%M:%S")
 
-#open screen device (png)
+#open graphics device (png)
 png("plot1.png", width = 480, height = 480)
 
 #create histogram, with labels and data
 hist(filtered_data$Global_active_power, col="red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
 
-#close screen device(png)
+#close graphics device(png)
 dev.off()
 
 }
